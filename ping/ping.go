@@ -11,8 +11,9 @@ import (
 )
 
 type PingResponse struct {
-	IP      net.IP
-	Success bool
+	IP       net.IP
+	Success  bool
+	Hostname string
 }
 
 type Pinger struct {
@@ -57,9 +58,17 @@ func (p *Pinger) PingAllLocalIP() []PingResponse {
 
 			if utils.CheckIP(net.ParseIP(addr), p.waitTime, p.count, p.timeout) {
 				ipsFound++
+				hostnames, _ := net.LookupAddr(addr)
+				hostname := "N/A"
+
+				if len(hostnames) > 0 {
+					hostname = hostnames[0]
+				}
+
 				responses = append(responses, PingResponse{
-					IP:      net.ParseIP(addr),
-					Success: true,
+					IP:       net.ParseIP(addr),
+					Success:  true,
+					Hostname: hostname,
 				})
 			}
 		}()
