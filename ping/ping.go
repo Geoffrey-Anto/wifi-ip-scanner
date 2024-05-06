@@ -7,7 +7,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/geoffrey-anto/scanner/utils"
+	"github.com/geoffrey-anto/wifi-ip-scanner/utils"
 )
 
 type PingResponse struct {

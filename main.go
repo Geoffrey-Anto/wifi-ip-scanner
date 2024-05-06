@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 
-	"github.com/geoffrey-anto/scanner/ping"
-	"github.com/geoffrey-anto/scanner/utils"
+	"github.com/geoffrey-anto/wifi-ip-scanner/ping"
+	"github.com/geoffrey-anto/wifi-ip-scanner/utils"
 )
 
 func main() {

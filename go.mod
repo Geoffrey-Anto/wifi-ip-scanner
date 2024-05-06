@@ -1,3 +1,3 @@
-module github.com/geoffrey-anto/scanner
+module github.com/geoffrey-anto/wifi-ip-scanner
 
 go 1.21
